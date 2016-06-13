@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet"
+	media="screen">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="css/mobiscroll.custom-2.16.1.min.css" />
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/vcapp.core.js"></script>
+<script src="js/hd.core.js"></script>
+<script src="js/timeformat.js"></script>
+<script src="js/mobiscroll.custom-2.16.1.min.js"></script>
+</head>
+<body>
+
+	<nav>
+		<ul id="navul">
+			<li id="navli_2" class="navli"><a class="navlia" href="search.html">检索</a></li>
+			<li id="navli_1" class="navli_cur"><a class="navlia_cur" href="history.html">历史</a></li>
+			<li id="navli_0" class="navli"><a class="navlia" href="main.html">我的</a></li>
+		</ul>
+	</nav>
+	
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+		
+	<div class="container-fluid" id="LG">
+		<div class="row-fluid">
+		<div class="span12">
+			<ul class="nav nav-tabs">
+				<li class="dropdown pull-right">
+					<a href="#" data-toggle="dropdown" class="dropdown-toggle" id="currentUser">当前用户： 黄多<strong class="caret"></strong></a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="modify_pwd.html">修改密码</a>
+						</li>
+						<li>
+							<a href="#">更多设置</a>
+						</li>
+						<li>
+							<a onclick="logout()" href="#">安全退出</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<br/>
+	
+	<div class="row-fluid">
+		<div class="span4">
+			<fieldset>
+				<label>日期：</label>
+				<input id="dateInput" class="date_yes" width="200" type="text" value=""/>
+				<button id="search" type="submit" class="btn">查找</button>
+			</fieldset>
+		</div>
+	</div>
+	
+	<br/>
+	<br/>
+	
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							工作内容
+						</th>
+						<th>
+							进度(%)
+						</th>
+						<th>
+							重要性
+						</th>
+						<th>
+							备注/问题
+						</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	</div>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() { 
+		//var mydate = new Date();
+		//var yesterday = $.hd.dateCal(mydate, -1).format('yyyy-MM-dd');
+		//$('.date_yes').attr("value" , yesterday);
+		//$('.date_yes').attr("data-date" , yesterday);
+		
+		var name = $.vcapp.ss.getJson("name");	
+		$("#currentUser").text("当前用户: "+name);
+		
+		initDateInput("#dateInput");
+	}); 
+	
+	function initDateInput(scroll){
+		var day = new Date();
+		var minDate = $.vcapp.AddDays(day,-100);
+		var yesterday = $.vcapp.AddDays(day,-7);
+		var maxDate = day;
+		
+		$(scroll).mobiscroll().range({
+			theme:"ios",
+			display:"modal",
+			lang:"zh",
+			mode:"scroller",
+			maxDate:maxDate,
+			minDate:minDate,
+			dateFormat:"yyyy-mm-dd",
+			//multiSelect:"2",
+			showLabel:true,
+			//rows:3,
+			//defaultValue:yesterday,
+			defaultValue:[yesterday,maxDate]
+			//selectedValues:[yesterday]
+		});
+		
+	}
+	
+	
+$(document).on("click","#search",function() { 
+		
+		var obj = {};
+		obj.date = $(".date_yes").val();
+		var dataJson = JSON.stringify(obj);
+		$.vcapp.queryAjax("log!history.do",dataJson,function(data){
+			if(data.respCode=="0"){
+				$("#tbody").empty();
+				var logList = data.jSONObject;
+				
+				$.each(logList,function(n,log){
+					var logId = log.id;
+					var date = log.date;
+					var items = log.items;
+					
+					$("#tbody").append("<tr><td></td><td><h2>"+date+"</h2></td></tr>");
+					
+					$.each(items,function(n,obj){
+						var reg = new RegExp("\n","g");
+						obj.content = obj.content.replace(reg,"<br>");
+						var html = ['<tr data-id="'+obj.id+'" class="'
+						            ,obj.level=="重要"?"error":"",'">'].join("");
+						html = [html,'<td class="column0">',n+1,'</p></td>'].join("");
+						html = [html,'<td class="column1">',obj.content,'</td>'].join("");
+						html = [html,'<td class="column2">',obj.status,'</td>'].join("");
+						html = [html,'<td class="column3">',obj.level,'</td>'].join("");
+						html = [html,'<td class="column4">',obj.remark,'</td></tr>'].join("");
+						$("#tbody").append(html);
+					});
+					
+					
+					
+				});
+				
+				
+			}else{
+				alert(data.respMsg);
+			}
+			
+			
+			
+		});
+		
+		return false;
+	}); 
+	
+	function logout(){
+		$.vcapp.ss.rmItem("name");
+		window.location.href='index.html';
+	}
+	
+</script>
+
+</html>

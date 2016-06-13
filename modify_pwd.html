@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet"
+	media="screen">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/vcapp.core.js"></script>
+</head>
+<body>
+	<div class="container-fluid" id="LG">
+		<form action="user!modifyPwd.do">
+			<label for="oldPassword">旧密码</label>
+			<input name="oldPassword" id="oldPassword" type="password">
+			
+			<label for="newPassword">新密码</label>
+			<input name="newPassword" id="newPassword" type="password">
+			
+			<label for="rePassword">确认密码</label>
+			<input name="rePassword" id="rePassword" type="password">
+			
+			<br>
+			<br>
+			<input id="submit" style="width: 200px" type="submit" value="修改">
+			<br>
+			<a href="main.html">返回</a>		
+		</form>
+	</div>
+</body>	
+<script type="text/javascript">
+	$(document).on("click","#submit",function(){
+		
+		var oldPassword = $("#oldPassword").val();
+		var newPassword = $("#newPassword").val();
+		var rePassword = $("#rePassword").val();
+		if(oldPassword==""||newPassword==""||rePassword==""){
+			alert("所有要素必填");
+			return false;
+		}
+		
+		$.vcapp.submitAjax($(this).parent(),function(data){
+			
+			alert(data.respMsg);
+			if(data.respCode == '0')
+				window.location.href="main.html";
+		});
+		return false;
+	});
+	
+	
+</script>
+
+</html>

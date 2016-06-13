@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Daily Report for DRC by Vida Wong-->
+<!--2016.01.10-->
+<!--Version 1.0-->
+
+<html xmlns="httm://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Daily Report for DRC</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no" />
+	<!--CSS Field-->
+	<link rel="stylesheet" href="css/style.css" />
+	<!--Script Field-->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/vcapp.core.js"></script>
+	<script src="js/hd.core.js"></script>
+	<script src="js/timeformat.js"></script>
+<script src="js/mobiscroll.custom-2.16.1.min.js"></script>
+<link rel="stylesheet" href="css/mobiscroll.custom-2.16.1.min.css" />
+	
+</head>
+
+<body>
+
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	<div id="userimg" class="userimg"><img src="img/doge.jpg"/></div>
+	
+	<div id="user">
+		<h3 id="username" class="username"></h3>
+	</div>
+
+	<nav>
+		<ul id="navul">
+			<li id="navli_2" class="navli"><a class="navlia" href="search.html">检索</a></li>
+			<li id="navli_1" class="navli"><a class="navlia" href="history.html">历史</a></li>
+			<li id="navli_0" class="navli_cur"><a class="navlia_cur" href="main.html">我的</a></li>
+		</ul>
+	</nav>
+	
+	<h4>● Write Daily Report</h4>
+	<hr width="94%"/>
+	
+
+	<div id="date_part" class="date_fill">
+		<div>
+			<a id="datebox-5" class="datebox_s"><</a>
+		</div>
+		<div id="date_part_1" class="date_fill_1">
+			<a id="datebox-3" class="datebox"></a>
+			<a id="datebox-2" class="datebox"></a>
+		</div>
+		<div id="date_part_2" class="date_fill_2">
+			<a id="datebox-1" class="datebox"></a>
+			<a id="datebox-0" class="datebox_cur"></a>
+		</div>
+		<div>
+			<a id="datebox-6" class="datebox_s">></a>
+		</div>
+	</div>
+
+	
+	<div class="date_fill" style="clear: both;">
+		<fieldset>
+			<label>日期：</label>
+			<input id="dateInput" class="dateInput" type="text" value=""/>
+		</fieldset>
+		<button id="fill" type="submit" class="btn">填充到当前表格</button>
+	</div>
+
+	
+	<div class="tablemode">
+
+		<table id="tdtable" border="1px" color="#c5c5c5">
+			<thead>
+				<tr>
+					<th>No</th>
+					<th>事件</th>
+					<th>进度(%)</th>
+					<th>重要程度</th>
+					<th>问题/备注</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="tbody" data-logid="">
+				<tr id="record1" class="record">
+					<td class="column0"><p class="number">1</p></td>
+					<td class="column1"><textarea class="event" name="event"></textarea></td>
+					<td class="column2"><input class="schedule" type="text" name="schedule"></input></td>
+					<td class="column3"><select class="important" name="important">
+						<option class="record-op1" value="重要">重要</option>
+						<option class="record-op2" value="一般">一般</option>
+					</select></td>
+					<td class="column4"><textarea class="remark" name="remark"></textarea></td>
+					<td class="column5"><a class="remove" href="#">×</a></td>
+				</tr>
+				
+				<tr id="record1" class="record">
+					<td class="column0"><p class="number">2</p></td>
+					<td class="column1"><textarea class="event" name="event"></textarea></td>
+					<td class="column2"><input class="schedule" type="text" name="schedule"></input></td>
+					<td class="column3"><select class="important" name="important">
+						<option class="record-op1" value="重要">重要</option>
+						<option class="record-op2" value="一般">一般</option>
+					</select></td>
+					<td class="column4"><textarea class="remark" name="remark"></textarea></td>
+					<td class="column5"><a class="remove" href="#">×</a></td>
+				</tr>
+				
+				<tr id="record1" class="record">
+					<td class="column0"><p class="number">3</p></td>
+					<td class="column1"><textarea class="event" name="event"></textarea></td>
+					<td class="column2"><input class="schedule" type="text" name="schedule"></input></td>
+					<td class="column3"><select class="important" name="important">
+						<option class="record-op1" value="重要">重要</option>
+						<option class="record-op2" value="一般">一般</option>
+					</select></td>
+					<td class="column4"><textarea class="remark" name="remark"></textarea></td>
+					<td class="column5"><a class="remove" href="#">×</a></td>
+				</tr>
+				
+				<tr id="record1" class="record">
+					<td class="column0"><p class="number">4</p></td>
+					<td class="column1"><textarea class="event" name="event"></textarea></td>
+					<td class="column2"><input class="schedule" type="text" name="schedule"></input></td>
+					<td class="column3"><select class="important" name="important">
+						<option class="record-op1" value="重要">重要</option>
+						<option class="record-op2" value="一般">一般</option>
+					</select></td>
+					<td class="column4"><textarea class="remark" name="remark"></textarea></td>
+					<td class="column5"><a class="remove" href="#">×</a></td>
+				</tr>
+			</tbody>	
+		</table>
+		
+	</div>
+	
+	<br/>
+	<br/>
+	
+	<ul class="tdbutton">
+		<li><a id="add-record" class="add-record" href="#">添加事件</a></li>
+		<li><button id="submitTB" class="submitTB" >提交</button></li>
+	</ul>
+
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	
+	<footer>Version 1.0 2016-01-10</footer>
+	
+	<br/>
+	<br/>
+	
+	<!--JavaSrcipt Part-->
+	
+	<script src="js/main.js"></script>
+	
+</body>
+
+</html>
