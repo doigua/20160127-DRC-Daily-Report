@@ -1,0 +1,582 @@
+
+ 
+ html{
+	 font-size: 62.5%;
+ }
+ 
+@media screen and (max-width: 800px) {
+	html{
+		font-size: 48%;
+	}
+	
+
+}
+ 
+ body{
+	 margin: 0px;
+	 padding: 0px;
+ }
+ 
+ 
+@font-face{
+	font-family:FZZXHJW0;
+	src: url('font/FZZXHJW0.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face{
+	font-family:JustOldFashion;
+	src: url('font/JustOldFashion.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/*Navigation Part*/
+nav{
+	margin-bottom: 0px;
+	position: fixed;
+	margin: 0px 0px;
+	top: 0px;
+	width: 100%;
+	height: 50px;
+	background: #444444;
+	z-index: 9;
+}
+
+#navul{
+	position: relative;
+	overflow: hidden;
+	margin: 0px 0px;
+	top: 5px;
+	right: 2%;
+	height: 40px;
+}
+
+.navli_cur{
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	float: right;
+	background: #ffffff;
+}
+
+
+.navlia_cur{
+	font-size: 1.6rem;
+	color: #444444;
+	display: block;
+}
+
+.navlia_cur:hover{
+	color: #222222;
+}
+
+.navli{
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	float: right;
+}
+
+.navlia{
+	font-size: 1.4rem;
+	color: #ffffff;
+	display: block;
+}
+
+.navlia:hover{
+	color: #dddddd;
+}
+ 
+ 
+@media screen and (max-width: 760px) {
+	
+	.navli{
+		width: 18%;
+	}
+	.navli_cur{
+		width: 18%;
+	}
+
+}
+
+ 
+.date_fill{
+	height: 50px;
+	min-width: 200px;
+	padding: 0px;
+	margin-left: 3%;
+}
+
+.date_fill fieldset{
+	border: 0px;
+	padding: 0px;
+}
+
+.date_fill label{
+	color: #444444;
+	font-size: 1.4rem;
+}
+
+.dateInput{
+	position: relative;
+	color: #444444;
+	padding-left: 5px;
+	width: 120px;
+	height: 26px;
+
+}
+ 
+ .date_fill button{
+	background: #eeeeee;
+	color: #444444;
+	font-size: 1.4rem;
+	border: 0px;
+	height: 33px;
+	width: 110px;
+	position: relative;
+	top: -32px;
+	left: 186px;
+}
+
+ 
+ a{
+	text-decoration: none;
+	color: #1e90ff;
+ }
+ 
+ a:hover{
+	color: #359bff;
+ }
+ 
+ p{
+	font-size: 1.6rem;
+	color: #444444;
+ }
+ 
+ p .htdate{
+	 font-size:1.4rem;
+	 color: #444444;
+ }
+ 
+ h2{
+
+	color: #444444;
+	font-size: 2.5rem;
+ }
+ 
+ 
+ h3{
+	font-family: JustOldFashion;
+	text-align: center;
+	color: #444444;
+	font-size: 2.2rem;
+ }
+ 
+ #currentUser{
+	font-family: JustOldFashion;
+	text-align: center;
+	color: #444444;
+	font-size: 2.2rem;
+ }
+ 
+ h4{
+	font-family: JustOldFashion;
+	color: #444444;
+	font-size: 2.0rem;
+	margin-left: 3%;
+ }
+ 
+ th{
+	padding: 10px 0px; 
+	font-family: FZZXHJW0;
+	font-size: 1.8rem;
+	color: #444444;
+	background: #eeeeee;
+ }
+ table{
+
+ }
+ 
+ ul{
+	list-style-type: none;
+ }
+ 
+ footer{
+	text-align: center;
+	color: #444444;
+  }
+
+ .userimg{
+	margin: auto;
+	width: 30%;
+	height: 30%;
+	max-width: 120px;
+	max-height: 120px;
+ }
+ 
+ .userimg img{
+	width: 100%;
+	height: 100%;
+	max-width: 120px;
+	max-height: 120px;
+	border-radius: 50%;
+ }
+ 
+ @media screen and (max-width: 800px) {
+	
+	.userimg{
+		position: fixed;
+		top: 10px;
+		left: 2%;
+		max-width: 30px;
+		max-height: 30px;
+		z-index: 12;
+	}
+ 
+	.userimg img{
+		border-radius: 50%;
+	}
+	
+	.username{
+		position: fixed;
+		top: 6px;
+		color: #ffffff;
+		font-size: 1.4em;
+		left: 13%;
+		z-index: 12;
+	}
+}
+ 
+ /* Date Part */
+
+ .date_fill{
+	 margin: auto;
+	 padding: 15px 2.5%;
+ }
+
+ 
+ .datebox_cur{
+	width: 20%;
+	min-width: 110px;
+	height: 50px;
+	margin: 6px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.8rem;	
+	float: left;
+	color: #ffffff;
+	background: #444444;
+ }
+ 
+ .datebox_cur:hover{
+	color: #ffffff;
+	background: #333333;
+ }
+ 
+ .datebox{
+	width: 15%;
+	min-width: 110px;
+	height: 50px;
+	margin: 6px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.8rem;
+	float: left;
+	color: #444444;
+	background: #eeeeee;
+ }
+ 
+ .datebox:hover{
+	color: #444444;
+	background: #dddddd;
+ }
+ 
+ .datebox_s{
+	width: 3%;
+	min-width: 25px;
+	height: 50px;
+	margin: 6px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 1.8rem;
+	float: left;
+	color: #444444;
+	background: #eeeeee;
+ }
+ 
+  .datebox_s:hover{
+	color: #444444;
+	background: #dddddd;
+ }
+ 
+@media screen and (max-width: 615px){
+	
+	 .date_fill_0{
+		 display: block;
+	 }
+	 
+	 .date_fill_1{
+		 display: none;
+	 }
+	
+	.datebox_cur{
+		width: 120px;
+	}
+	
+}
+
+ 
+ #tdtable{
+	width: 100%;
+	border: 1px solid #c5c5c5; 
+	border-collapse:collapse; 
+	border-color: #c5c5c5;
+	color: #c5c5c5;
+	position: relative;
+ }
+
+
+ .column0{
+	width:5%;
+	min-width: 30px;
+	margin: 0px;
+	height: 80px;
+	text-align: center;
+	color: #444444;
+	font-size: 1.8rem;
+	background: #eeeeee;
+ }
+
+
+ .column1{
+	width:54%;
+	height: 80px;
+ }
+ 
+	 .event{
+		width: 98%;
+		height: 80px;
+		font-size: 1.8rem;
+		border: none;
+		resize: none;
+		
+	 }
+.eventR{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	font-size: 1.8rem;
+	border: none;
+	resize: none;
+	outline:none !important;
+	box-shadow: none;
+	
+	background: transparent;
+}
+ 
+ .column2{
+	width: 10%;
+	min-width:50px;
+	height: 80px;
+}
+ 
+	 .schedule{
+		width: 95%;
+		height: 80px;
+		text-align: center;
+		font-size: 1.8rem;
+		border: none;
+		resize: none;
+	 }
+
+
+  .column3{
+	width: 10%;
+	min-width:50px;
+	height: 80px;
+
+ }
+ 
+	.important{
+		width: 100%;
+		height: 80px;
+		line-height: 80px;
+		border: none;
+		outline: none;
+		font-size: 1.8rem;
+		text-align: center;	
+		color: #ff6060;
+		/*Clear the original css*/
+		appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+	}
+	
+	/*Clear the original css in IE*/
+	/* select :-ms-expand{
+		display: none;
+	} */
+	
+	
+	
+	.record-op1{
+		width: 100%;
+		color: #ff6060;
+		text-align: center;
+	}
+	 
+	.record-op1:hover{
+		background: #ff8080;
+	}
+	 
+	.record-op2{
+		width: 100%;
+		color: #4ae539;
+		text-align: center;
+	}
+	
+ 
+
+ 
+ .column4{
+	width: 10%;
+	height: 80px;
+	min-width:50px;
+ }
+ 
+	.remark{
+		width: 90%;
+		height: 80px;
+		border: none;
+		resize: none;
+		font-size: 1.8rem;
+		color: #444444;
+	}
+ 
+
+ 
+ .column5{
+	width:5%;
+	height: 80px;
+	line-height: 80px;
+ }
+ 
+	 .remove{
+		 width: 20px;
+		 height: 80px;
+		 margin: 0px auto;
+		 padding: 0px;
+		 font-size: 1.8rem;
+		 text-align: center;
+		 color: #ff8080;
+		 display: block;
+	 }
+	 
+	 .remove:hover{
+		 color: #ffa0a0;
+	 }
+
+/* When the srceen smaller than 1100px */	 
+
+	 
+	 
+	 
+	 
+.tdbutton{
+	padding: 0;
+} 
+
+	 
+ .add-record{
+	display: block;
+	float: left;
+	background: #eeeeee;
+	border: 1px solid #dddddd;
+	color: #444444;
+	font-family: FZZXHJW0;
+	width: 25%;
+	margin-left: 3%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	overflow: hidden;
+	font-size: 1.8rem;
+ }
+
+ .add-record:hover{
+	color: #444444;
+	background: #e0e0e0;
+ }
+
+ .submitTB{
+	width: 65%;
+	height: 40px;
+	line-height: 40px;
+	background: #444444;
+	margin-right: 3%;
+	float: right;
+	color: #ffffff;
+	font-family: FZZXHJW0;
+	overflow: hidden;
+	border: none;
+	font-size: 1.8rem;
+ }
+ 
+ .submitTB:hover {
+	 background: #333333;
+ }
+ 
+
+ 
+ 
+ 
+ /* Search.html */
+ 
+ .container-fluid{
+	margin: 0px;
+	padding: 0px;
+ }
+ 
+ .span4{
+	width: 150px;
+ 	float: left;
+ }
+ /* Date */
+ .form-inline{
+ 	width: 150px;
+ 	margin: 0px;
+ }
+ 
+ .form-inline label{
+	 margin-left: 8px;
+ }
+ 
+ .date_yes{
+ 	width: 100px;
+	position: absolute;
+	top: 154px;
+	left: 48px;
+ }
+ 
+ /* User name */
+#name{
+ 	width: 50px;
+	position: absolute;
+	top: 154px;
+	left: 170px;
+ }
+ 
+ #search{
+	position: absolute;
+	width: 54px;
+	height: 30px;
+	top: 154px;
+	left: 260px;
+ }
+ 
